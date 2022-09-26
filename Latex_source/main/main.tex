@@ -1,0 +1,28 @@
+\documentclass[a4paper,11pt]{book}
+\usepackage{subfiles} % Struttura modulare
+\usepackage{imakeidx} % Indice analitico
+
+\input{../Header.tex} %contiene packages e input di bibliografia
+
+
+\begin{document}
+
+\input{../Frontespizio.tex}
+\input{../Abstract/Abstract.tex}
+
+\tableofcontents
+\vfill
+
+
+\subfile{../Introduction/Introduction.tex}
+
+\mainmatter
+
+\subfile{../Chapter1/Chapter1.tex} % superconductivity theory
+\subfile{../Chapter2/Chapter2.tex} % superconducting qubits
+\subfile{../Chapter3/Chapter3.tex} % optimal control
+
+\subfile{../Conclusions/Conclusions.tex}
+
+\printbibliography
+\end{document}

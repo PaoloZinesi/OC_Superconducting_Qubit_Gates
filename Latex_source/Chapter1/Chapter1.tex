@@ -1,0 +1,125 @@
+\documentclass[../main/main.tex]{subfiles}
+\begin{document}
+
+\chapter{Introduction to Superconductivity Theory}
+
+\section{First experimental observations}
+Many metals and alloys below a critical temperature $T_C$ show no electrical resistivity. This phenomenon is called \textit{superconductivity}. At the critical temperature, a phase transition from a normal conducting state to a superconducting state occurs.\\
+This phenomenon was observed for the first time by physicist Kamerlingh Onnes in 1911 while he was working with pure mercury in liquid helium temperatures \cite{Onnes1991}. Onnes measured the resistance at different temperatures and compared it to the resistance at $T=0$°C. While the resistance at $T=4.3\,$K was 0.21\% of the resistance at $0$°C, at $T=3\,$K the resistance dropped below $10^{-7}$ times the resistance at 0°C. A persistent current can thus flow in a superconducting ring for a very long time without attenuation.\\
+Superconductors exhibit also peculiar magnetic properties at temperatures below $T_C$. It is possible to show experimentally that a bulk superconductor in a weak magnetic field behaves as an exact diamagnet. As soon as an external magnetic field $ \boldsymbol{B_{ext}}$ is switched on, persistent surface currents start to flow and generate an opposite magnetic field, giving net zero magnetic field on the inside of the superconductor. Nevertheless, if a normal conductor in a weak magnetic field is cooled down to its critical temperature, the magnetic field in the material is expelled. This phenomenon is the \textit{Meissner effect}. This effect is visible for magnetic fields below a temperature-dependent critical magnetic field $B_C (T)$, while for stronger magnetic fields the materials return to the normal conducting state.\\
+The observation of such an effect demonstrates that the superconductors cannot be simply described as materials with vanishing resistivity $\rho$ below the critical temperature. In fact, in classical electromagnetism Ohm's law states
+\begin{equation} \label{eq:Ohm_law}
+    \boldsymbol{E} = \rho\, \boldsymbol{j}.
+\end{equation}
+If $\rho$ tends to zero and if the current density $\boldsymbol{j}$ stays finite, the electric field $\boldsymbol{E}$ has to vanish. If $\boldsymbol{E}$ vanishes, according to the Maxwell's equation
+\begin{equation} \label{eq:Maxw_curlE}
+     \boldsymbol{\nabla}  \times \boldsymbol{E} = -\frac{\partial \boldsymbol{B}}{\partial t},
+\end{equation}
+also $\frac{\partial \boldsymbol{B}}{\partial t} = 0$ and thus the magnetic field $\boldsymbol{B}$ is constant. This simplistic description of the superconductor implies that, after the cooling, the magnetic field should stay constant inside the bulk superconductor even if the external field is switched off. But the experiments disagree with this simple description. The real superconductor below $T_C$ presents no magnetic field on the inside and if a magnetic field was in the material before the cooling, when the temperature goes below $T_C$ the field is gradually expelled.
+\section{London equations}
+Fritz London and Heinz London proposed in 1935 a set of phenomenological equations to explain the relation between superconducting currents and magnetic fields \cite{London_equations}. The London equations replace Ohm's law in the description of a superconductor and give the expected experimental results. A simplified derivation of the London equations is now presented.\\
+We consider at first the classical equation of motion of an electron in an external electric field $\boldsymbol{E}$,
+\begin{equation} \label{eq:general_electron_motion}
+    m \boldsymbol{\dot{v}} + \frac{m}{\tau_R} \boldsymbol{v_D} = -e \boldsymbol{E}.
+\end{equation}
+In Eq.~\eqref{eq:general_electron_motion} $m$ is the mass of an electron, $\boldsymbol{v_D}$ is the difference between the electron velocity $\boldsymbol{v}$ and the thermal velocity $\boldsymbol{v_{\text{therm}}}$, and $\tau_R$ is the characteristic time at which $\boldsymbol{v}$ relaxes exponentially to $\boldsymbol{v_{\text{therm}}}$ when the external field is zero.\\
+We take into account the vanishing resistivity by neglecting the friction term $m \boldsymbol{v_D}/\tau_R$. With the definition of the current density $\boldsymbol{j_s}=-e n_s \boldsymbol{v}$, for superconducting electrons of density $n_s$, the first London equation follows
+\begin{equation} \label{eq:first_London_equation}
+    \frac{\partial \boldsymbol{j_s}}{\partial t}\,  = \frac{n_s e^2}{m} \boldsymbol{E}.
+\end{equation}
+Computing the curl on both sides of Eq.~\eqref{eq:first_London_equation} and using Eq.~\eqref{eq:Maxw_curlE} to get an expression for the magnetic field, we get
+\begin{equation} \nonumber
+    \frac{\partial}{\partial t} \left( \boldsymbol{\nabla}  \times \boldsymbol{j_s} \right) = \frac{n_s e^2}{m} \left( -\frac{\partial \boldsymbol{B}}{\partial t} \right),
+\end{equation}
+\begin{equation} \label{eq:prel_second_London_equation}
+     \frac{\partial}{\partial t} \left( \boldsymbol{\nabla}  \times \boldsymbol{j_s} + \frac{n_s e^2}{m} \boldsymbol{B} \right) = 0.
+\end{equation}
+Equation~\eqref{eq:prel_second_London_equation} can be integrated over time and an integration constant appears. In order to get the equation that correctly describes the Meissner effect, this constant must be set equal to zero. The second London equation is thus
+\begin{equation} \label{eq:second_London_equation}
+      \boldsymbol{\nabla}  \times \boldsymbol{j_s} + \frac{n_s e^2}{m} \boldsymbol{B} = 0.
+\end{equation}
+Equations \eqref{eq:first_London_equation} and \eqref{eq:second_London_equation} describe the relation between $\boldsymbol{E},\boldsymbol{B},\boldsymbol{j_s}$ in a superconductor and they are the superconducting version of Ohm's law.\\
+The combination of the London equations with the Maxwell's equations in static conditions
+\begin{gather} 
+    \boldsymbol{\nabla}  \times \boldsymbol{B} = \mu_0 \boldsymbol{j_s} \label{eq:Maxw_curlB}, \\
+    \boldsymbol{\nabla}  \cdot \boldsymbol{B} = 0, \label{eq:Maxw_divB}
+\end{gather}
+yields the differential equation
+\begin{equation} \label{eq:London_eqdiff_B}
+    \boldsymbol{\nabla}^2  \boldsymbol{B} -\frac{\mu_0 n_s e^2}{m} \boldsymbol{B} = 0.
+\end{equation}
+Considering a semi-infinite superconductor along $z>0$ and a magnetic field that on the surface $z=0$ is $\boldsymbol{B} = B_{0}\, \hat{\boldsymbol{x}}$, a possible solution of Eq.~\eqref{eq:London_eqdiff_B} has the form 
+\begin{equation} \label{eq:solution_London_equations}
+    \boldsymbol{B} = B_{0}\, e^{-z/\Lambda_L}\, \hat{\boldsymbol{x}},
+\end{equation}
+where $\Lambda_L = \sqrt{\frac{m}{\mu_0 n_s e^2}}$ is defined as the London penetration depth in the superconductor. The solutions proportional to $e^{+z/\Lambda_L}$ are divergent and so they are not further considered. The same calculations bring to an identical solution for the current density $\boldsymbol{j_s}$. Magnetic fields of the form of Eq.~\eqref{eq:solution_London_equations} are exponentially suppressed inside the superconductor with a characteristic length scale of $\Lambda_L$. An estimate of $\Lambda_L$ can be obtained setting $n_s$ as the atomic density. For example, $\Lambda_L=160\, \text{\AA}$ for Aluminium and  $\Lambda_L=1110\, \text{\AA}$ for Cadmium \cite{meservey2018equilibrium}. In macroscopic superconductors Eq.~\eqref{eq:solution_London_equations} implies the absence of any magnetic field after a thin layer of material.
+\section{BCS theory}
+In 1956 Leon N. Cooper demonstrated that, in the presence of a Fermi sphere of additional electrons, the Pauli exclusion principle allows the existence of a two-electron bound state independently from the weakness of the attraction between the electrons \cite{PhysRev.104.1189}. In the famous 1957 paper of Bardeen, Cooper and Schrieffer (BCS), an attractive interaction emerges in the form of phonon-mediated interaction \cite{BCS_theory}. An electron passing through a lattice deforms slightly the position of the positive ions and this effect increases the density of positive charge around the lattice ions. This increment has an attractive effect on a second electron. The slow displacement of an ion core (i.e., the attraction on a second electron) is maximum when the first electron is at a distance of more than $1000\,\text{\AA}$. The Coulomb repulsion of the electrons is completely screened over such distances.\\
+The pairs of electrons that interact via the electron-lattice-electron mechanism are called \textit{Cooper pairs}. All Cooper pairs occupy states $(\boldsymbol{k}\uparrow,-\boldsymbol{k}\downarrow)$, with opposite wavevectors $\boldsymbol{k}$ and spins $\uparrow \downarrow$ to satisfy the exclusion principle. The scattering of a Cooper pair from $(\boldsymbol{k}\uparrow,-\boldsymbol{k}\downarrow)$ to $(\boldsymbol{k'}\uparrow,-\boldsymbol{k'}\downarrow)$ leads to an energy reduction, since the matrix element $V_{\boldsymbol{k},\boldsymbol{k'}}$ is attractive and independent of $\boldsymbol{k}$ to a first approximation. In fact, BCS theory uses a potential of the form
+\begin{equation} \label{eq:V_kk'}
+  V_{\boldsymbol{k},\boldsymbol{k'}} =
+    \begin{cases}
+      -V_0 & \text{for } 0<\frac{\hbar^2 k^2}{2m}-E_F<\hbar \omega_D \text{ and } 0<\frac{\hbar^2 k'^2}{2m}-E_F<\hbar \omega_D\\
+      0 & \text{otherwise}
+    \end{cases}.
+\end{equation}
+The Fermi energy $E_F$ is the energy of the highest occupied state of the electrons gas at $T=0\,$K. The Debye frequency $\omega_D$ is the average phonon frequency of the material in the Debye model. The positive constant $V_0$ represents the intensity of the attraction between two electrons, and when $V_0$ tends to zero the non-interacting electrons gas results are obtained.\\
+The energy reduction caused by the formation of a Cooper pair leads to the formation of even more Cooper pairs, until a new ground state is reached. This new ground state is separated by a finite energy gap $E_g \equiv 2\Delta$ from the first excited state, and it is precisely a superconducting state. Although based on strong approximations, the results of BCS theory are in good agreement with a large class of superconductors \cite{meservey2018equilibrium}. \par
+In the following we briefly review some of the major theoretical results obtained by BCS theory.
+The energy gap $\Delta$ of a superconductor is defined as half of the minimum energy needed to break a Cooper pair of electrons in the ground state at $T=0\,$K. However, the energy gap ultimately depends on the constant $V_0$ and on a $\boldsymbol{k}$-summation of state-occupancy probabilities. Defining $Z(E_F)$ as the pair density of states at the Fermi energy and performing the $\boldsymbol{k}$-summation, an explicit equation for $\Delta$ can be obtained
+\begin{equation} \label{eq:energy_gap_formula}
+    \Delta = \frac{\hbar \omega_D}{\sinh{(1/V_0\, Z(E_F))}} \approx 2\hbar \omega_D e^{-1/V_0\, Z(E_F)} .
+\end{equation}
+In Eq.~\eqref{eq:energy_gap_formula} we can notice that a finite $V_0$ leads to a finite energy gap in the material, while a vanishing $V_0$ causes the energy gap to close. In addition, the value of $\Delta$ is directly proportional to the average phonon energy $\hbar \omega_D$.\\
+At temperatures above $T=0\,$K there is a finite probability to find electrons in the normal conducting state because of thermal excitations. That probability increases for greater temperatures until at the critical temperature $T_C$ all the Cooper pairs are separated. At that temperature the superconductor transforms into a normal conductor and the gap is closed. This condition can be expressed as
+\begin{equation} \label{eq:T_C_analytical}
+    \frac{1}{V_0\, Z(E_F)} = \int_{0}^{\hbar \omega_D} \frac{1}{\epsilon}\tanh{\left( \frac{\epsilon}{2 k_B T_C} \right)} \,d\epsilon .
+\end{equation}
+The numerical solution of the integral gives
+\begin{equation} \label{eq:T_C_numerical}
+    k_B T_C = 1.14\ \hbar \omega_D\ e^{-1/V_0\, Z(E_F)}.
+\end{equation}
+\subsection{Demonstration of the second London equation}
+We report now a calculation of the density of a supercurrent $\boldsymbol{j_s}$ in a magnetic field $\boldsymbol{B}$ that uses the results of BCS theory \cite{ibach2009solid}.\\
+The many-particle wave function of a superconductor is a product of two-particle wave functions of Cooper pairs $\psi(\boldsymbol{x}_1,\boldsymbol{x}_2)$. More precisely, the many-particle wave function is a normalized sum of such two-particle wave function products. In the presence of a current flow, the Cooper pair wave function can be written as
+\begin{equation} \label{eq:CP_wavefunc_supercurrentK}
+    \psi(\boldsymbol{x}_1,\boldsymbol{x}_2) = e^{i \boldsymbol{K} \cdot \boldsymbol{R}}\ \psi(\boldsymbol{K}=0;\boldsymbol{x}_1-\boldsymbol{x}_2),
+\end{equation}
+in which $\hbar \boldsymbol{K}$ is the additional momentum of the Cooper pair due to the current flow, $\boldsymbol{R}=(\boldsymbol{x}_1+\boldsymbol{x}_2)/2$ is the center of mass coordinate of the Cooper pair, and $\psi(\boldsymbol{K}=0;\boldsymbol{x}_1-\boldsymbol{x}_2)$ refers to the wave function without current flow. The wave function $\psi(\boldsymbol{K}=0;\boldsymbol{x}_1-\boldsymbol{x}_2)$ depends only on the relative coordinate $\boldsymbol{r}=\boldsymbol{x}_1-\boldsymbol{x}_2$ of the electrons. The many-particle wave function is thus
+\begin{equation} \label{eq:BCS_exact_wavefunction}
+   \Psi_{BCS} = \hat{\mathcal{A}}\ e^{i \boldsymbol{K} \cdot (\boldsymbol{R}_1 + \boldsymbol{R}_2 + \dots)} \Psi(\boldsymbol{K}=0; \boldsymbol{r}_1, \boldsymbol{r}_2,\dots),
+\end{equation}
+where $\hat{\mathcal{A}}$ is the anti-symmetrization operator, which adds expression similar to its argument with varying signs. The total wave function $\Psi_{BCS}$ is thus antisymmetric for the exchange of single-particle states, as requested by the exclusion principle. Although being mathematically correct, the presence of the anti-symmetrization operator $\hat{\mathcal{A}}$ does not play a fundamental role in the following calculations and so it will be ignored. Defining $\Psi(\boldsymbol{K}=0; \boldsymbol{r}_1, \boldsymbol{r}_2,\dots) = \Psi(0)$, Eq.~\eqref{eq:BCS_exact_wavefunction} can be written as
+\begin{equation} \label{eq:BCS_approx_wavefunction}
+    \Psi_{BCS} \simeq e^{i \boldsymbol{K} \cdot (\boldsymbol{R}_1 + \boldsymbol{R}_2 + \dots)} \Psi(0).
+\end{equation}
+We can now define
+\begin{align}  \label{eq:tildaR_tildaK}
+\boldsymbol{\tilde{R}} &= \frac{\sum_{\nu} \boldsymbol{R}_{\nu}}{\sum_{\nu} 1} = \frac{1}{N_{CP}}\sum_{\nu} \boldsymbol{R}_{\nu}, & \boldsymbol{\tilde{K}} &= \boldsymbol{K} \sum_{\nu} 1 = N_{CP} \boldsymbol{K},
+\end{align}
+and then Eq.~\eqref{eq:BCS_approx_wavefunction} becomes
+\begin{equation} \label{eq:BCS_approx2_wavefunction}
+    \Psi_{BCS} \simeq e^{i \boldsymbol{\tilde{K}} \cdot \boldsymbol{\tilde{R}}} \Psi(0).
+\end{equation}
+In the approximation of considering the set of $N_{CP}$ Cooper pairs as a unique particle of total mass $M=2m N_{CP}$ and total charge $Q=-2e N_{CP}$, the supercurrent density $\boldsymbol{j_s}$ is related to the current density of probability $\boldsymbol{\mathcal{J}}$ by the relation
+\begin{equation} \label{eq:relation_js_J}
+    \boldsymbol{j_s} = Q \boldsymbol{\mathcal{J}},
+\end{equation}
+and $\boldsymbol{\mathcal{J}}$ has the well-known definition \cite[p.~314]{ballentine1998quantum}
+\begin{equation} \label{eq:definition_J}
+    \boldsymbol{\mathcal{J}} = \frac{1}{M} Re\left\{ \Psi^{*} \left[ \frac{\hbar}{i}\hat{\boldsymbol{\nabla}} - Q \boldsymbol{A} \right] \Psi \right\},
+\end{equation}
+in which $\boldsymbol{A}$ is the magnetic vector potential. Applying Eq.~\eqref{eq:relation_js_J} and \eqref{eq:definition_J} to $\Psi_{BCS}$ we get a relation for the supercurrent density
+\begin{equation} \label{eq:definition_js}
+\begin{split}
+    \boldsymbol{j_s} & = \frac{Q}{M} Re\left\{ \Psi_{BCS}^{*} \left[ \frac{\hbar}{i} \hat{\boldsymbol{\nabla}}_{\boldsymbol{\tilde{R}}} - Q \boldsymbol{A} \right] \Psi_{BCS} \right\}\\
+    & = -\frac{e}{m} \left[ \hbar \boldsymbol{\tilde{K}} + 2e N_{CP} \boldsymbol{A} \right] |\Psi(0)|^2 .
+\end{split}
+\end{equation}
+Since $\boldsymbol{\nabla} \times \boldsymbol{\tilde{K}} = 0$ because $\boldsymbol{\tilde{K}}$ does not depend on space coordinates, the application of the curl on both sides of Eq.~\eqref{eq:definition_js} gives
+\begin{equation} \label{eq:demonstration_second_London_equation}
+    \boldsymbol{\nabla}  \times \boldsymbol{j_s} = - \frac{e^2}{m} 2N_{CP}|\Psi(0)|^2 \left( \boldsymbol{\nabla}  \times \boldsymbol{A} \right) = -\frac{n_s e^2}{m} \boldsymbol{B},
+\end{equation}
+defining $|\Psi(0)|^2 = 1/V$ for the $\Psi(0)$ normalization condition. Thus $n_s = 2N_{CP}/V$ is defined as the density of superconducting electrons. The result is in agreement with Eq.~\eqref{eq:second_London_equation}.\\
+
+\end{document}

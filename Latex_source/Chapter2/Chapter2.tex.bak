@@ -1,0 +1,30 @@
+\documentclass[../main/main.tex]{subfiles}
+\begin{document}
+\chapter{Superconducting qubits}
+
+\section{Josephson junctions}
+Advantages of superconducting qubits\\
+Explanation of how it works, quantization parameters (n=excess of Cooper pairs), characteristic energy and capacitance of the setup\\
+
+\section{Charge qubits}
+Energy ranges, Hamiltonian in the box, Hamiltonian in the |n> base,  Hamiltonian at low temperatures $H_Q$, eigenstates of $H_Q$, time evolution described by $H_Q$ for a fixed time $T$\\
+
+\section{Implementation of qubit gates}
+Without external noise sources the Hamiltonian of the system is exactly $H_Q$ so its time evolution is described exactly by...\\
+
+\subsection{One-qubit gates}
+Rotation around x-axis, z-axis, NOT gate, Hadamard gate\\
+
+\subsection{Two-qubit gates}
+CNOT-gate\\
+
+
+\section{Noisy qubit gates}
+
+\subsection{One-qubit gates}
+Perturbed Hamiltonian, example showing NOT gate\\
+
+\subsection{Two-qubit gates}
+Perturbed Hamiltonian, example showing CNOT-gate\\
+
+\end{document}

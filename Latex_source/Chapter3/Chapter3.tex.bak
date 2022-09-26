@@ -1,0 +1,23 @@
+\documentclass[../main/main.tex]{subfiles}
+\begin{document}
+\chapter{Optimal Control}
+
+...The error rate of a processor is reduced by minimizing external dephasing sources and by extending the phase coherence times. The former can never be completely eliminated because we need to interact with the system to couple the qubits and to read out the results....\\
+....The cost function $J$ depends on the physical quantities of the system and encodes the objective of the optimization. The maximum (or minimum) of $J$ if found with gradient-based algorithms, in which the gradient of $J$ is computed either analytically or numerically, and gradient-free algorithms...\\[1cm]
+
+
+Minimize $J_{gate} = 1-\frac{1}{N_0^2} \left| Tr( U_t^{\dagger} U(T) \right|$, with $N_0=dim \mathcal{H}$\\
+\textbf{Procedure:} For the chosen control amplitude of every iteration propagate numerically $i\hbar \frac{\partial \eta}{\partial t} = H\eta$ from $t=0$ to $t=T$. With $\eta(T)$ compute the value of $J_{gate}$ and then with the minimization algorithm choose another amplitude and continue the loop. At the end a convergence test (even a weak one) is needed.\\
+
+\section{Optimization of one-qubit NOT gate}
+\[ 
+	H(t) = H_c (t) + H_d = \frac{1}{2} \left[ \epsilon(t) \sigma_z + \Delta(t) \sigma_x \right] + \alpha \sigma_z
+\]
+
+\section{Optimization of two-qubit CNOT gate}
+\[ 
+	H(t) = H_c (t) + H_d = \frac{1}{2} \sum_{i=1,2} \left[ \epsilon^{(i)}(t) \sigma^{(i)}_z + \Delta^{(i)}(t) \sigma^{(i)}_x \right] + E_{cc}(t)\sigma^{(1)}_z \sigma^{(2)}_z + \sum_{i=1,2}\alpha^{(i)} \sigma^{(i)}_z
+\]
+
+
+\end{document}

@@ -1,2 +1,5 @@
-# OC_Superconducting_Qubit_Gates
-Bachelor Thesis, University of Padua, A.Y. 2020/2021
+# Optimal Control of Superconducting Qubit Gates
+Bachelor Thesis, University of Padua, A.Y. 2020/2021.
+
+### Abstract
+Quantum technologies promise to improve the performance of a whole range of computational pro- cesses. This is why researchers have been studying the physical implementation of such technologies for over 30 years. One of the most well-established platforms to perform quantum calculations are superconducting qubits, in which Cooper pairs tunnel across insulating barriers that separate superconductors. After introducing superconductivity theory, we simulate one- and two-qubit gates by controlling ap- plied voltages and magnetic fields. Then, we show how an external noise source can alter the behavior of the quantum gate. Finally, we apply optimal control theory to find the time-dependent voltage and magnetic fields that maximize the target gate’s success probability. With this procedure we aim to compensate for the experimental imperfections via a general numerical approach.

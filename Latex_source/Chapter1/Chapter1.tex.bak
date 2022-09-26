@@ -1,0 +1,18 @@
+\documentclass[../main/main.tex]{subfiles}
+\begin{document}
+
+\chapter{Introduction to Superconductivity Theory}
+
+\section{First experimental observations}
+Vanishing resistance below critical temperature, Meissner-Ochenselfed effect, ...\\
+
+\section{London equations}
+First and second London equations\\
+
+\section{BCS theory}
+Small attraction between two electrons\cite{ibach2009solid}, Cooper pairs, BCS ground state, energy gap and critical temperature, supercurrents, demonstration of London equations from BCS ground state+Ginzburg-Landau theory\\
+
+\section{Josephson effect}
+Cooper-pair tunneling, simple derivation without second quantization formalism\\
+
+\end{document}
